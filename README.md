@@ -5,7 +5,7 @@ The official WinForms theme for CrEaTiiOn Brotherhood &amp; UltimateCraft
 The theme includes many controls to make modern and fabulous looking UIs. Each component has been checked and tested for optimal performance. The theme includes over 100 controls. Each one has been fine tuned to match the color flow of CrEaTiiOn Brotherhood and UltimateCraft. Different types of controls are sorted by name and have been categorized by visual appearance.
 
 # Coloring system
-- Our devault accent color is red, RGB: 250, 36, 38
+- Our default accent color is red, RGB: 250, 36, 38
 - For background colors, we use different shades of dark gray
 - Text coloring is usualy white or something close to white
 
