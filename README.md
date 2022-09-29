@@ -31,6 +31,7 @@ Here is the code that is needed for the CPROJ.
    <LangVersion>10</LangVersion>
  </PropertyGroup>
 ```
+Keep in mind that C# 9 is the minimum version that is needed for the theme to work. The "10" in the code above can be changed to another C# version number as long as it is C# 9 or higher.
 
 # How to use the theme
 It’s quite simple to get the theme up and running. As long as the project supports C# 10 and above, it should work. 
