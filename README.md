@@ -75,7 +75,7 @@ This theme is made up of many other themes out there. Some components have been 
 - External support: MayhemModding (CrEaTiiOn_MM)
 - External support: Phobia (CrEaTiiOn_Phobia)
 - External support: Skull (CrEaTiiOn_Skull)
-- Controls and helpers: N-a-r-w-i-n, MetroSet:n
+- Controls and helpers: N-a-r-w-i-n, MetroSetUI
 - Controls and helpers: drakonia, Flat-UI-Midnight
 - Controls and helpers: TheKronks, KUI
 - Controls and helpers: RobinPerris, DarkUI
