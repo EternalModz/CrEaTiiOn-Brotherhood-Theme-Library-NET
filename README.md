@@ -16,6 +16,7 @@ The theme will be updated a lot in the future. Since it is in it’s early stage
 The theme supports C# 9+. Any version of .NET that supports C# 9+ will work with the theme. .NET Core and .NET Standard 6.0+ versions also work well with the theme. For .NET Framework, the CPROJ file must be edited. .NET Framework does not support C# 9+ by default. So the CPROJ file must be edited so that the solution supports higher versions of the language.
 
 Steps for adding updating the CPROJ file (for .NET Framework ONLY)
+
 Step 1: Locate the CPROJ file in the solution folder of the project that you want to use the theme in.
 
 Step 2: Open the CPROJ filein a text editor such as the Notepad.
