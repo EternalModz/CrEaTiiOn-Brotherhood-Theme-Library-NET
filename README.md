@@ -13,7 +13,23 @@ The theme includes many controls to make modern and fabulous looking UIs. Each c
 The theme will be updated a lot in the future. Since it is in it’s early stages, there may be some inconsistencies and problems. Make sure to let me know if you have any questions or if you have any bugs to report. There’s also a GitHub issues tab where you can request for bug fixes and give feedback.
 
 # Supported .NET versions
-The theme supports C# 10. Any version of .NET that supports C# 10 will work with the theme. .NET 6.0 and .NET 7.0 work well with it. As for .NET Framework, it has not been tested yet and it should work as long as the framework version supports C# 10 and above.
+The theme supports C# 9+. Any version of .NET that supports C# 9+ will work with the theme. .NET Core and .NET Standard 6.0+ versions also work well with the theme. For .NET Framework, the CPROJ file must be edited. .NET Framework does not support C# 9+ by default. So the CPROJ file must be edited so that the solution supports higher versions of the language.
+
+Steps for adding updating the CPROJ file (for .NET Framework ONLY)
+Step 1: Locate the CPROJ file in the solution folder of the project that you want to use the theme in.
+
+Step 2: Open the CPROJ filein a text editor such as the Notepad.
+
+Step 3: Locate the first line under the base project and paste in the following code.
+
+Step 4: Save the file and your done!
+
+Here is the code that is needed for the CPROJ.
+```XML
+ <PropertyGroup>
+   <LangVersion>10</LangVersion>
+ </PropertyGroup>
+```
 
 # How to use the theme
 It’s quite simple to get the theme up and running. As long as the project supports C# 10 and above, it should work. 
