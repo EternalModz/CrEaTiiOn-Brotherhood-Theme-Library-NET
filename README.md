@@ -47,10 +47,15 @@ Keep in mind that C# 9 is the minimum version that is needed for the theme to wo
 It’s quite simple to get the theme up and running. As long as the project supports C# 10 and above, it should work. 
 
 Step 1: Download the latest version of the theme.
+
 Step 2: Unpack the ZIP file and extract it to the desktop or to any location where it can be found easily.
+
 Step 3: Open the extracted folder and locate the folder with the name “Theme.”
+
 Step 4: Copy that folder or drag and drop it inside of the visual studio project. NOTE: It must be inserted into the project folder using Visual Studio itself. Dropping the folder without using Visual Studio may break the project or cause the theme to not work.
+
 Step 5: Build and rebuild the project in Visual Studio.
+
 Step 6: Open or create a new WinForm and navigate to the toolbox, the new controls should automatically show up towards the top. 
 
 That’s it, you're done! Enjoy using the theme :)
