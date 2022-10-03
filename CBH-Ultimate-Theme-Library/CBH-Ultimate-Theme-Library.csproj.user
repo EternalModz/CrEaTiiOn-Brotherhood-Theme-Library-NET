@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Badge\CrEaTiiOn_Badge.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Banner\CrEaTiiOn_Banner.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Bubble\CrEaTiiOn_ChatBubbleLeft.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Bubble\CrEaTiiOn_ChatBubbleRight.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Button\CrEaTiiOn_DescriptiveButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Button\CrEaTiiOn_FlatButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Button\CrEaTiiOn_LightButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Button\CrEaTiiOn_PillButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Card\CrEaTiiOn_GradientCard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\CheckBox\CrEaTiiOn_CustomCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\CheckBox\CrEaTiiOn_FlatCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\CheckBox\CrEaTiiOn_LightCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\CheckBox\CrEaTiiOn_MetroCheckBox5.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\CheckBox\CrEaTiiOn_ModernCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\CheckBox\CrEaTiiOn_RoundCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\ControlBox\CrEaTiiOn_ControlBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\ControlBox\CrEaTiiOn_FlatControlBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\ControlBox\CrEaTiiOn_ModernControlBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\DatePicker\CrEaTiiOn_DatePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Gauge\CrEaTiiOn_Gauge.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\GroupBox\CrEaTiiOn_FlatGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\GroupBox\CrEaTiiOn_ModernGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Icon\CrEaTiiOn_InfoIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Icon\CrEaTiiOn_TickIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Label\CrEaTiiOn_FancyLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Message\CrEaTiiOn_Message.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Notify\CrEaTiiOn_NotificationBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Numeric\CrEaTiiOn_Numeric.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Palette\CrEaTiiOn_ColorPalette.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\PictureBox\CrEaTiiOn_CircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\PictureBox\CrEaTiiOn_ModernPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\PictureBox\CrEaTiiOn_PictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Progress\CrEaTiiOn_CircleProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Progress\CrEaTiiOn_FancyProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Progress\CrEaTiiOn_FlatProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Progress\CrEaTiiOn_FlatRoundProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Progress\CrEaTiiOn_ProcessingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Progress\CrEaTiiOn_SpinningCircles.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\RadioButton\CrEaTiiOn_AirRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\RadioButton\CrEaTiiOn_ClasicRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\RadioButton\CrEaTiiOn_MetroRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\RadioButton\CrEaTiiOn_ModernRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\RadioButton\CrEaTiiOn_RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\RichTextBoxEdit\CrEaTiiOn_RichTextBoxEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\RichTextBox\CrEaTiiOn_RichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Segment\CrEaTiiOn_Segment.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Separator\CrEaTiiOn_LightSeperator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Separator\CrEaTiiOn_ModernSeperator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Separator\CrEaTiiOn_Separator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Slider\CrEaTiiOn_FlatSliderBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Slider\CrEaTiiOn_ModernSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\StatusBar\CrEaTiiOn_FlatStatusBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Stick\CrEaTiiOn_JoyStick.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Strip\CrEaTiiOn_ContextMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\TabControl\CrEaTiiOn_BarTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\TabControl\CrEaTiiOn_FlatTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Button\CrEaTiiOn_ModernButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Button\CrEaTiiOn_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Combobox\CrEaTiiOn_ComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\TabControl\CrEaTiiOn_MetroTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\TextBox\CrEaTiiOn_ModernTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\CheckBox\CrEaTiiOn_CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\TabControl\CrEaTiiOn_ModernTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\DropDown\CrEaTiiOn_DropdownMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Progress\CrEaTiiOn_ModernProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Toggle\CrEaTiiOn_ModernToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Strip\CrEaTiiOn_FlatContextMenuStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Label\CrEaTiiOn_MetroLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Controller\CrEaTiiOn_DragControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\DropDown\CrEaTiiOn_ClasicDropdownMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Ellipse\CrEaTiiOn_Ellipse.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Panel\CrEaTiiOn_FlatPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Toggle\CrEaTiiOn_ToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Picker\CrEaTiiOn_ColorPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Controller\CrEaTiiOn_VolumeController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Ellipse\CrEaTiiOn_ObjectEllipse.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Handle\CrEaTiiOn_FormHandle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\LabelEdit\CrEaTiiOn_LabelEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Label\CrEaTiiOn_BigLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Label\CrEaTiiOn_Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Label\CrEaTiiOn_ClasicHeaderLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Label\CrEaTiiOn_FlatLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Label\CrEaTiiOn_ModernLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Label\CrEaTiiOn_HeaderLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Label\CrEaTiiOn_ModernHeaderLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Label\CrEaTiiOn_ClasicLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Label\CrEaTiiOn_AirLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Label\CrEaTiiOn_SmallLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\LinkLabelEdit\CrEaTiiOn_LinkLabelEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\LinkLabel\CrEaTiiOn_LinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\ListBox\CrEaTiiOn_ListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Panel\CrEaTiiOn_ModernPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Panel\CrEaTiiOn_Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Helpers\Main\Helper\Theme.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Helpers\Main\Helper\ThemeContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\ThemeBase\CrEaTiiOn_Ultimate_GradientPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Panel\CrEaTiiOn_WidgetPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Progress\CrEaTiiOn_ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Sleeper\CrEaTiiOn_Sleeper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\TabPage\CrEaTiiOn_TabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\TabPage\CrEaTiiOn_ModernTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\TextBox\CrEaTiiOn_AirTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\TrackBar\CrEaTiiOn_TrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\Controls\Watcher\CrEaTiiOn_ExtendedFileSystemWatcher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\ThemeBase\CrEaTiiOn_Ultimate_GradientTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Theme\ThemeBase\CrEaTiiOn_Ultimate_FancyButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\ThemeBase\CrEaTiiOn_Ultimate_FancyComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Theme\ThemeBase\CrEaTiiOn_Ultimate_GradientButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\ThemeBase\CrEaTiiOn_Ultimate_GradientLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\ThemeBase\CrEaTiiOn_Ultimate_GradientNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\ThemeBase\CrEaTiiOn_Ultimate_GradientToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\ThemeBase\CrEaTiiOn_Ultimate_GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\ThemeBase\CrEaTiiOn_Ultimate_NumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\ThemeBase\CrEaTiiOn_Ultimate_PictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\ThemeBase\CrEaTiiOn_Ultimate_RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Theme\ThemeBase\CrEaTiiOn_Ultimate_ToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
