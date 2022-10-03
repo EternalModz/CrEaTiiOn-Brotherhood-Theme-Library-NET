@@ -21,7 +21,7 @@ Step 1: Locate the CPROJ file in the solution folder of the project that you wan
 
 Step 2: Open the CPROJ filein a text editor such as the Notepad.
 
-Step 3: Locate the first line under the base project and paste in the following code.
+Step 3: Locate the first line under the base project and paste in the code below.
 
 Step 4: Save the file and your done!
 
@@ -31,6 +31,16 @@ Here is the code that is needed for the CPROJ.
    <LangVersion>10</LangVersion>
  </PropertyGroup>
 ```
+
+This is how it should look.
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <LangVersion>10</LangVersion>
+```
+
 Keep in mind that C# 9 is the minimum version that is needed for the theme to work. The "10" in the code above can be changed to another C# version number as long as it is C# 9 or higher.
 
 # How to use the theme
