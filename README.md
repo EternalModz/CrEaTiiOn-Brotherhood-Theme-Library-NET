@@ -74,6 +74,9 @@ this.FormBorderStyle = FormBorderStyle.None;
 Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 ```
 
+# Supported Visual Studio Versions
+Visual Studio 2022 and 2019 have worked well with the theme. The theme has not been tested on lower versions but feel free to try it out yourself.
+
 # Information
 This theme is made up of many other themes out there. Some components have been built from scratch and some of them have been imported from other themes. It is only fair that everyone gets proper credit. The credits have been listed below.
 
