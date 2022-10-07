@@ -19,7 +19,7 @@ Steps for updating the CPROJ file (for .NET Framework ONLY)
 
 Step 1: Locate the CPROJ file in the solution folder of the project that you want to use the theme in.
 
-Step 2: Open the CPROJ filein a text editor such as the Notepad.
+Step 2: Open the CPROJ file in a text editor such as the Notepad.
 
 Step 3: Locate the first line under the base project and paste in the code below.
 
