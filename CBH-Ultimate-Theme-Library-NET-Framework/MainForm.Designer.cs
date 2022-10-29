@@ -28,18 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crEaTiiOn_FlatContextMenuStrip1 = new CBH.Controls.CrEaTiiOn_FlatContextMenuStrip();
             this.SuspendLayout();
             // 
-            // crEaTiiOn_FlatContextMenuStrip1
-            // 
-            this.crEaTiiOn_FlatContextMenuStrip1.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.crEaTiiOn_FlatContextMenuStrip1.ForeColor = System.Drawing.Color.White;
-            this.crEaTiiOn_FlatContextMenuStrip1.Name = "crEaTiiOn_FlatContextMenuStrip1";
-            this.crEaTiiOn_FlatContextMenuStrip1.ShowImageMargin = false;
-            this.crEaTiiOn_FlatContextMenuStrip1.Size = new System.Drawing.Size(36, 4);
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -47,15 +38,13 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.ForeColor = System.Drawing.Color.White;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private CBH.Controls.CrEaTiiOn_FlatContextMenuStrip crEaTiiOn_FlatContextMenuStrip1;
     }
 }
 

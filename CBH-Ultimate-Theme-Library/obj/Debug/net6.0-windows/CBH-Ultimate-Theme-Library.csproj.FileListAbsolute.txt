@@ -203,3 +203,27 @@ C:\Users\EternalModz\Desktop\Development\Testing themes\Before Release - NET C a
 C:\Users\EternalModz\Desktop\Development\Testing themes\Before Release - NET C and F\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.pdb
 C:\Users\EternalModz\Desktop\Development\Testing themes\Before Release - NET C and F\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.genruntimeconfig.cache
 C:\Users\EternalModz\Desktop\Development\Testing themes\Before Release - NET C and F\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\ref\CBH-Ultimate-Theme-Library.dll
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\bin\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.exe
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\bin\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.deps.json
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\bin\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.runtimeconfig.json
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\bin\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.dll
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\bin\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.pdb
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.csproj.AssemblyReference.cache
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH_Ultimate_Theme_Library.MainForm.resources
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH_Ultimate_Theme_Library.Properties.Resources.resources
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH.Controls.CrEaTiiOn_ComboBox.resources
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH.Controls.CrEaTiiOn_ColorPicker.resources
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH.RJControls.CrEaTiiOn_ModernTextBox.resources
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH.Ultimate.Controls.CrEaTiiOn_Ultimate_FancyComboBox.resources
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH.Ultimate.Controls.CrEaTiiOn_Ultimate_GradientTextBox.resources
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.csproj.GenerateResource.cache
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.AssemblyInfoInputs.cache
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.AssemblyInfo.cs
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.csproj.CoreCompileInputs.cache
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.dll
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\refint\CBH-Ultimate-Theme-Library.dll
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.pdb
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH-Ultimate-Theme-Library.genruntimeconfig.cache
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\ref\CBH-Ultimate-Theme-Library.dll
+C:\Users\EternalModz\Desktop\Development\Testing themes\V1.1 Update\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH_Ultimate_Theme_Library.Theme.ThemeBase.Ultimate_Controls.CrEaTiiOn_Ultimate_FancyTextBox.resources

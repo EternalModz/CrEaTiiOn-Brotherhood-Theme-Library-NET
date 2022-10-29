@@ -28,7 +28,7 @@ namespace Zeroit.Framework.UIThemes.AdvancedCore
 			SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.UserPaint | ControlStyles.DoubleBuffer, true);
 			ItemSize = new Size(0, 34);
 			Padding = new Point(24, 0);
-			Font = new Font("Arial", 12);
+			Font = new Font("Segoe UI", 12);
 		}
 
 		protected override void CreateHandle()
