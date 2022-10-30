@@ -15,11 +15,11 @@ The theme will be updated a lot in the future. Since it is in it’s early stage
 # Supported .NET versions
 The theme supports C# 9+. Any version of .NET that supports C# 9+ will work with the theme. .NET Core and .NET Standard 6.0+ versions also work well with the theme. For .NET Framework, the CPROJ file must be edited. .NET Framework does not support C# 9+ by default. So the CPROJ file must be edited so that the solution supports higher versions of the language.
 
-Steps for adding updating the CPROJ file (for .NET Framework ONLY)
+Steps for updating the CPROJ file (for .NET Framework ONLY)
 
 Step 1: Locate the CPROJ file in the solution folder of the project that you want to use the theme in.
 
-Step 2: Open the CPROJ filein a text editor such as the Notepad.
+Step 2: Open the CPROJ file in a text editor such as the Notepad.
 
 Step 3: Locate the first line under the base project and paste in the code below.
 
@@ -47,10 +47,15 @@ Keep in mind that C# 9 is the minimum version that is needed for the theme to wo
 It’s quite simple to get the theme up and running. As long as the project supports C# 10 and above, it should work. 
 
 Step 1: Download the latest version of the theme.
+
 Step 2: Unpack the ZIP file and extract it to the desktop or to any location where it can be found easily.
+
 Step 3: Open the extracted folder and locate the folder with the name “Theme.”
+
 Step 4: Copy that folder or drag and drop it inside of the visual studio project. NOTE: It must be inserted into the project folder using Visual Studio itself. Dropping the folder without using Visual Studio may break the project or cause the theme to not work.
+
 Step 5: Build and rebuild the project in Visual Studio.
+
 Step 6: Open or create a new WinForm and navigate to the toolbox, the new controls should automatically show up towards the top. 
 
 That’s it, you're done! Enjoy using the theme :)
@@ -73,6 +78,9 @@ private static extern IntPtr CreateRoundRectRgn
 this.FormBorderStyle = FormBorderStyle.None;
 Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 ```
+
+# Supported Visual Studio Versions
+Visual Studio 2022 and 2019 have worked well with the theme. The theme has not been tested on lower versions but feel free to try it out yourself.
 
 # Information
 This theme is made up of many other themes out there. Some components have been built from scratch and some of them have been imported from other themes. It is only fair that everyone gets proper credit. The credits have been listed below.
