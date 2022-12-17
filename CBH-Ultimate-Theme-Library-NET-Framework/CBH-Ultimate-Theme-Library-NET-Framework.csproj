@@ -6,13 +6,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C3D7B16C-C047-4BAA-884F-7A2308619C33}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>CBH_Ultimate_Theme_Library_NET_Framework</RootNamespace>
     <AssemblyName>CBH-Ultimate-Theme-Library-NET-Framework</AssemblyName>
-    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -47,13 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Theme\Controls\Badge\CrEaTiiOn_Badge.cs">
       <SubType>Component</SubType>
@@ -377,54 +374,51 @@
     <Compile Include="Theme\Helpers\Main\Helper\ThemeContainer.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Shadow Controls\CrEaTiiOn_Shadow_Controls.cs">
+    <Compile Include="Theme\ThemeBase\Shadow Controls\Shadow_Controls.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_FancyButton.cs">
+    <Compile Include="Theme\ThemeBase\Ultimate Controls\Ultimate_FancyButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_FancyComboBox.cs">
+    <Compile Include="Theme\ThemeBase\Ultimate Controls\Ultimate_FancyComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GradientButton.cs">
+    <Compile Include="Theme\ThemeBase\Ultimate Controls\Ultimate_GradientButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GradientLabel.cs">
+    <Compile Include="Theme\ThemeBase\Ultimate Controls\Ultimate_GradientLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GradientNumericUpDown.cs">
+    <Compile Include="Theme\ThemeBase\Ultimate Controls\Ultimate_GradientNumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GradientPanel.cs">
+    <Compile Include="Theme\ThemeBase\Ultimate Controls\Ultimate_GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GradientTextBox.cs">
+    <Compile Include="Theme\ThemeBase\Ultimate Controls\Ultimate_GradientTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GradientTextBox.Designer.cs">
-      <DependentUpon>CrEaTiiOn_Ultimate_GradientTextBox.cs</DependentUpon>
+    <Compile Include="Theme\ThemeBase\Ultimate Controls\Ultimate_GradientTextBox.Designer.cs">
+      <DependentUpon>Ultimate_GradientTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GradientToggleButton.cs">
+    <Compile Include="Theme\ThemeBase\Ultimate Controls\Ultimate_GradientToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GroupBox.cs">
+    <Compile Include="Theme\ThemeBase\Ultimate Controls\Ultimate_GroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_NumericUpDown.cs">
+    <Compile Include="Theme\ThemeBase\Ultimate Controls\Ultimate_NumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_PictureBox.cs">
+    <Compile Include="Theme\ThemeBase\Ultimate Controls\Ultimate_PictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_RadioButton.cs">
+    <Compile Include="Theme\ThemeBase\Ultimate Controls\Ultimate_RadioButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_ToggleButton.cs">
+    <Compile Include="Theme\ThemeBase\Ultimate Controls\Ultimate_ToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -433,6 +427,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Theme\Controls\Combobox\CrEaTiiOn_ComboBox.resx">
       <DependentUpon>CrEaTiiOn_ComboBox.cs</DependentUpon>
@@ -443,12 +438,12 @@
     <EmbeddedResource Include="Theme\Controls\TextBox\CrEaTiiOn_ModernTextBox.resx">
       <DependentUpon>CrEaTiiOn_ModernTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_FancyComboBox.resx">
-      <DependentUpon>CrEaTiiOn_Ultimate_FancyComboBox.cs</DependentUpon>
+    <EmbeddedResource Include="Theme\ThemeBase\Ultimate Controls\Ultimate_FancyComboBox.resx">
+      <DependentUpon>Ultimate_FancyComboBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_FancyTextBox.resx" />
-    <EmbeddedResource Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GradientTextBox.resx">
-      <DependentUpon>CrEaTiiOn_Ultimate_GradientTextBox.cs</DependentUpon>
+    <EmbeddedResource Include="Theme\ThemeBase\Ultimate Controls\Ultimate_FancyTextBox.resx" />
+    <EmbeddedResource Include="Theme\ThemeBase\Ultimate Controls\Ultimate_GradientTextBox.resx">
+      <DependentUpon>Ultimate_GradientTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

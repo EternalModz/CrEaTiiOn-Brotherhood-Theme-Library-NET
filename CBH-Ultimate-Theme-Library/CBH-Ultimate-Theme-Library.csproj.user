@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Theme\Controls\Badge\CrEaTiiOn_Badge.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -289,7 +286,7 @@
     <Compile Update="Theme\Helpers\Main\Helper\ThemeContainer.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GradientPanel.cs">
+    <Compile Update="Theme\ThemeBase\Ultimate Controls\Ultimate_GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Theme\Controls\Panel\CrEaTiiOn_WidgetPanel.cs">
@@ -316,40 +313,40 @@
     <Compile Update="Theme\Controls\Watcher\CrEaTiiOn_ExtendedFileSystemWatcher.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GradientTextBox.cs">
+    <Compile Update="Theme\ThemeBase\Ultimate Controls\Ultimate_GradientTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_FancyButton.cs">
+    <Compile Update="Theme\ThemeBase\Ultimate Controls\Ultimate_FancyButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_FancyComboBox.cs">
+    <Compile Update="Theme\ThemeBase\Ultimate Controls\Ultimate_FancyComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GradientButton.cs">
+    <Compile Update="Theme\ThemeBase\Ultimate Controls\Ultimate_GradientButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GradientLabel.cs">
+    <Compile Update="Theme\ThemeBase\Ultimate Controls\Ultimate_GradientLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GradientNumericUpDown.cs">
+    <Compile Update="Theme\ThemeBase\Ultimate Controls\Ultimate_GradientNumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GradientToggleButton.cs">
+    <Compile Update="Theme\ThemeBase\Ultimate Controls\Ultimate_GradientToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_GroupBox.cs">
+    <Compile Update="Theme\ThemeBase\Ultimate Controls\Ultimate_GroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_NumericUpDown.cs">
+    <Compile Update="Theme\ThemeBase\Ultimate Controls\Ultimate_NumericUpDown.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_PictureBox.cs">
+    <Compile Update="Theme\ThemeBase\Ultimate Controls\Ultimate_PictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_RadioButton.cs">
+    <Compile Update="Theme\ThemeBase\Ultimate Controls\Ultimate_RadioButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_ToggleButton.cs">
+    <Compile Update="Theme\ThemeBase\Ultimate Controls\Ultimate_ToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
