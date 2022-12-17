@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net 6.0", "CBH-Ultimate-Theme-Library\Net 6.0.csproj", "{9C5E98D3-671D-41D9-9B6D-BE9EFFB64F0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CBH-Ultimate-Theme-Library", "CBH-Ultimate-Theme-Library\CBH-Ultimate-Theme-Library.csproj", "{9C5E98D3-671D-41D9-9B6D-BE9EFFB64F0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net Framework v4.8", "CBH-Ultimate-Theme-Library-NET-Framework\Net Framework v4.8.csproj", "{C3D7B16C-C047-4BAA-884F-7A2308619C33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CBH-Ultimate-Theme-Library-NET-Framework", "CBH-Ultimate-Theme-Library-NET-Framework\CBH-Ultimate-Theme-Library-NET-Framework.csproj", "{C3D7B16C-C047-4BAA-884F-7A2308619C33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
