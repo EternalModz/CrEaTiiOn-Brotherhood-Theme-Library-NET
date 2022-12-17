@@ -1,7 +1,0 @@
-C:\Users\Rishan Sardana\source\repos\CBH-Ultimate-Theme-Library\CBH-Ultimate-Theme-Library\obj\Debug\netcoreapp3.1\CBH-Ultimate-Theme-Library.csproj.AssemblyReference.cache
-C:\Users\Rishan Sardana\source\repos\CBH-Ultimate-Theme-Library\CBH-Ultimate-Theme-Library\obj\Debug\netcoreapp3.1\CBH_Ultimate_Theme_Library.Form1.resources
-C:\Users\Rishan Sardana\source\repos\CBH-Ultimate-Theme-Library\CBH-Ultimate-Theme-Library\obj\Debug\netcoreapp3.1\CBH-Ultimate-Theme-Library.csproj.GenerateResource.cache
-C:\Users\Rishan Sardana\source\repos\CBH-Ultimate-Theme-Library\CBH-Ultimate-Theme-Library\obj\Debug\netcoreapp3.1\CBH-Ultimate-Theme-Library.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Rishan Sardana\source\repos\CBH-Ultimate-Theme-Library\CBH-Ultimate-Theme-Library\obj\Debug\netcoreapp3.1\CBH-Ultimate-Theme-Library.AssemblyInfoInputs.cache
-C:\Users\Rishan Sardana\source\repos\CBH-Ultimate-Theme-Library\CBH-Ultimate-Theme-Library\obj\Debug\netcoreapp3.1\CBH-Ultimate-Theme-Library.AssemblyInfo.cs
-C:\Users\Rishan Sardana\source\repos\CBH-Ultimate-Theme-Library\CBH-Ultimate-Theme-Library\obj\Debug\netcoreapp3.1\CBH-Ultimate-Theme-Library.csproj.CoreCompileInputs.cache
