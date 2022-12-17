@@ -1,0 +1,20 @@
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\Net 6.0.csproj.AssemblyReference.cache
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH_Ultimate_Theme_Library.Properties.Resources.resources
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH.Controls.CrEaTiiOn_ComboBox.resources
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH.Controls.CrEaTiiOn_ColorPicker.resources
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH.RJControls.CrEaTiiOn_ModernTextBox.resources
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH.Ultimate.Controls.CrEaTiiOn_Ultimate_FancyComboBox.resources
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH_Ultimate_Theme_Library.Theme.ThemeBase.Ultimate_Controls.CrEaTiiOn_Ultimate_FancyTextBox.resources
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\CBH.Ultimate.Controls.CrEaTiiOn_Ultimate_GradientTextBox.resources
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\Net 6.0.csproj.GenerateResource.cache
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\Net 6.0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\Net 6.0.AssemblyInfoInputs.cache
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\Net 6.0.AssemblyInfo.cs
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\Net 6.0.csproj.CoreCompileInputs.cache
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\bin\Debug\net6.0-windows\Net 6.0.deps.json
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\bin\Debug\net6.0-windows\Net 6.0.dll
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\bin\Debug\net6.0-windows\Net 6.0.pdb
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\Net 6.0.dll
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\refint\Net 6.0.dll
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\Net 6.0.pdb
+C:\Users\Messiemax\source\repos\console\WiiU\Minecraft\CrEaTiiOn-Brotherhood-Official-C-Theme\CBH-Ultimate-Theme-Library\obj\Debug\net6.0-windows\ref\Net 6.0.dll

@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Messiemax\\source\\repos\\console\\WiiU\\Minecraft\\CrEaTiiOn-Brotherhood-Official-C-Theme\\CBH-Ultimate-Theme-Library\\CBH-Ultimate-Theme-Library.csproj": {}
+    "C:\\Users\\Messiemax\\source\\repos\\console\\WiiU\\Minecraft\\CrEaTiiOn-Brotherhood-Official-C-Theme\\CBH-Ultimate-Theme-Library\\Net 6.0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Messiemax\\source\\repos\\console\\WiiU\\Minecraft\\CrEaTiiOn-Brotherhood-Official-C-Theme\\CBH-Ultimate-Theme-Library\\CBH-Ultimate-Theme-Library.csproj": {
+    "C:\\Users\\Messiemax\\source\\repos\\console\\WiiU\\Minecraft\\CrEaTiiOn-Brotherhood-Official-C-Theme\\CBH-Ultimate-Theme-Library\\Net 6.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Messiemax\\source\\repos\\console\\WiiU\\Minecraft\\CrEaTiiOn-Brotherhood-Official-C-Theme\\CBH-Ultimate-Theme-Library\\CBH-Ultimate-Theme-Library.csproj",
-        "projectName": "CBH-Ultimate-Theme-Library",
-        "projectPath": "C:\\Users\\Messiemax\\source\\repos\\console\\WiiU\\Minecraft\\CrEaTiiOn-Brotherhood-Official-C-Theme\\CBH-Ultimate-Theme-Library\\CBH-Ultimate-Theme-Library.csproj",
+        "projectUniqueName": "C:\\Users\\Messiemax\\source\\repos\\console\\WiiU\\Minecraft\\CrEaTiiOn-Brotherhood-Official-C-Theme\\CBH-Ultimate-Theme-Library\\Net 6.0.csproj",
+        "projectName": "Net 6.0",
+        "projectPath": "C:\\Users\\Messiemax\\source\\repos\\console\\WiiU\\Minecraft\\CrEaTiiOn-Brotherhood-Official-C-Theme\\CBH-Ultimate-Theme-Library\\Net 6.0.csproj",
         "packagesPath": "C:\\Users\\Messiemax\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Messiemax\\source\\repos\\console\\WiiU\\Minecraft\\CrEaTiiOn-Brotherhood-Official-C-Theme\\CBH-Ultimate-Theme-Library\\obj\\",
         "projectStyle": "PackageReference",
