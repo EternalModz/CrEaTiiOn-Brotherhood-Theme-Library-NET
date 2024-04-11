@@ -1,8 +1,10 @@
-﻿using System;
+﻿#region Imports
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+#endregion
 
 namespace CBH.Ultimate.Controls
 {
@@ -18,10 +20,11 @@ namespace CBH.Ultimate.Controls
         public int BorderRadius { get => _borderRadius; set { if (value <= this.Height) _borderRadius = value; else BorderRadius = this.Height; Invalidate(); } }
         [Category("CrEaTiiOn")]
         public Color BorderColor { get => _borderColor; set { _borderColor = value; Invalidate(); } }
-        [Category("CrEaTiiOn")]
-        public Color BackgroundColor { get => BackColor; set => BackColor = value; }
-        [Category("CrEaTiiOn")]
-        public Color TextColor { get => ForeColor; set => ForeColor = value; }
+
+        // Override BackColor and ForeColor to ensure proper handling
+        public override Color BackColor { get => base.BackColor; set { base.BackColor = value; Invalidate(); } }
+        public override Color ForeColor { get => base.ForeColor; set { base.ForeColor = value; Invalidate(); } }
+
         [Category("CrEaTiiOn")]
         public Color HoverOverColor { get => FlatAppearance.MouseOverBackColor; set { FlatAppearance.MouseOverBackColor = value; Invalidate(); } }
         [Category("CrEaTiiOn")]
@@ -37,13 +40,13 @@ namespace CBH.Ultimate.Controls
             FlatAppearance.MouseOverBackColor = Color.FromArgb(15, 15, 15);
             FlatAppearance.MouseDownBackColor = Color.FromArgb(25, 25, 25);
             Resize += OnResize;
+            SetStyle(ControlStyles.ResizeRedraw, true); // Enable redraw on resize
         }
 
         private void OnResize(object sender, EventArgs e)
         {
             if (_borderRadius > Height)
                 BorderRadius = Height;
-
         }
 
         private GraphicsPath GetFigurePath(RectangleF rect, float radius)
@@ -92,18 +95,6 @@ namespace CBH.Ultimate.Controls
                     }
                 }
             }
-        }
-
-        protected override void OnHandleCreated(EventArgs e)
-        {
-            base.OnHandleCreated(e);
-            Parent.BackColorChanged += ParentOnBackColorChanged;
-        }
-
-        private void ParentOnBackColorChanged(object sender, EventArgs e)
-        {
-            if (DesignMode)
-                Invalidate();
         }
     }
 }

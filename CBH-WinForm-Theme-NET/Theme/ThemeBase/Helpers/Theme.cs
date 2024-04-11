@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 namespace CBH_Ultimate_Theme_Library
 {
-
     #region Theme Base
 
     #region Imports
@@ -2460,6 +2459,4 @@ namespace CBH_Ultimate_Theme_Library
             G.DrawIcon(Parent.FindForm().Icon, new Rectangle(9, 18, 25, 25));
         }
     }
-
 }
-

@@ -1,165 +1,119 @@
-﻿#region Imports
-
-using System;
-using System.ComponentModel;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Linq;
 using System.Windows.Forms;
 
-#endregion
-
-namespace CBH.Controls
+namespace CBH_WinForm_Theme_Library_NET
 {
-    #region CrEaTiiOn_RadioButton
-
-    [DefaultEvent("CheckedChanged")]
-    public class CrEaTiiOn_Ultimate_RadioButton : Control
+    internal class CrEaTiiOn_RadioButton : Control
     {
-        #region Variables
+        private bool isChecked;
 
-        private int X;
-        private bool _Checked;
-        private Color _CheckedColor = Color.FromArgb(250, 36, 38);
-        private Color _CircleColor = Color.FromArgb(15, 15, 15);
-        private SmoothingMode _SmoothingType = SmoothingMode.HighQuality;
+        // Properties for customization
+        public Color HighlightColor { get; set; }
+        public Color BaseColor { get; set; }
+        public Color InnerRingColor { get; set; }
+        public string Text { get; set; }
 
-        #endregion
-
-        #region Properties
-
+        // Property for checked state
         public bool Checked
         {
-            get => _Checked;
+            get { return isChecked; }
             set
             {
-                _Checked = value;
-                InvalidateControls();
-                CheckedChangedEvent?.Invoke(this);
-                Invalidate();
-            }
-        }
-
-        public SmoothingMode SmoothingType
-        {
-            get => _SmoothingType;
-            set
-            {
-                _SmoothingType = value;
-                Invalidate();
-            }
-        }
-
-        public Color CircleColor
-        {
-            get => _CircleColor;
-            set
-            {
-                _CircleColor = value;
-                Invalidate();
-            }
-        }
-
-        public Color CheckedColor
-        {
-            get => _CheckedColor;
-            set
-            {
-                _CheckedColor = value;
-                Invalidate();
-            }
-        }
-
-        #endregion
-
-        #region EventArgs
-
-        public delegate void CheckedChangedEventHandler(object sender);
-        private CheckedChangedEventHandler CheckedChangedEvent;
-
-        public event CheckedChangedEventHandler CheckedChanged
-        {
-            add => CheckedChangedEvent = (CheckedChangedEventHandler)Delegate.Combine(CheckedChangedEvent, value);
-            remove => CheckedChangedEvent = (CheckedChangedEventHandler)Delegate.Remove(CheckedChangedEvent, value);
-        }
-
-        protected override void OnMouseDown(MouseEventArgs e)
-        {
-            if (!_Checked)
-            {
-                @Checked = true;
-            }
-            else
-            {
-                @Checked = false;
-            }
-
-            Focus();
-            base.OnMouseDown(e);
-        }
-
-        protected override void OnMouseMove(MouseEventArgs e)
-        {
-            base.OnMouseMove(e);
-            X = e.X;
-            Invalidate();
-        }
-
-        protected override void OnTextChanged(EventArgs e)
-        {
-            base.OnTextChanged(e);
-            //Width = 20 + (int)CreateGraphics().MeasureString(Text, Font).Width;
-            //Width = 20 + (int)TextRenderer.MeasureText(Text, Font).Width;
-        }
-
-        protected override void OnResize(EventArgs e)
-        {
-            base.OnResize(e);
-            Height = 17;
-        }
-
-        #endregion
-
-        public CrEaTiiOn_Ultimate_RadioButton()
-        {
-            Size = new(120, 17);
-            DoubleBuffered = true;
-            Cursor = Cursors.Hand;
-            ForeColor = Color.White;
-        }
-
-        private void InvalidateControls()
-        {
-            if (!IsHandleCreated || !_Checked)
-            {
-                return;
-            }
-
-            foreach (Control _Control in Parent.Controls)
-            {
-                if (_Control != this && _Control is CrEaTiiOn_Ultimate_RadioButton button)
+                if (isChecked != value && value)
                 {
-                    button.Checked = false;
+                    // Uncheck other radio buttons in the same container
+                    UncheckOtherRadioButtons();
                 }
+
+                isChecked = value;
+                Invalidate();
             }
         }
 
+        // Constructor
+        public CrEaTiiOn_RadioButton()
+        {
+            // Default color values
+            HighlightColor = Color.FromArgb(250, 36, 38);
+            BaseColor = Color.FromArgb(15, 15, 15);
+            InnerRingColor = Color.White;
+
+            // Default size and checked state
+            Size = new Size(190, 20);
+            isChecked = false;
+
+            // Default text
+            Text = "RadioButton";
+        }
+
+        // Override for painting the control
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            Graphics G = e.Graphics;
-            G.Clear(Parent.BackColor);
-            G.SmoothingMode = SmoothingType;
 
-            G.FillEllipse(new SolidBrush(CircleColor), new Rectangle(0, 0, 16, 16));
+            // Determine the color based on the checked state
+            Color currentColor = isChecked ? HighlightColor : BaseColor;
 
-            if (_Checked)
+            // Draw the main filled circle
+            using (var brush = new SolidBrush(currentColor))
             {
-                G.DrawString("a", new Font("Marlett", 15), new SolidBrush(CheckedColor), new Point(-3, -2));
+                // Draw a filled circle with anti-aliasing
+                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                e.Graphics.FillEllipse(brush, 0, 0, Height - 1, Height - 1);
             }
 
-            G.DrawString(Text, Font, new SolidBrush(ForeColor), new Point(20, -3));
+            if (isChecked)
+            {
+                // Draw the inner filled circle when checked
+                using (var brush = new SolidBrush(InnerRingColor))
+                {
+                    // Draw a filled ellipse for the inner circle
+                    e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                    e.Graphics.FillEllipse(brush, 4, 4, Height - 9, Height - 9);
+                }
+            }
+
+            using (var textBrush = new SolidBrush(ForeColor))
+            {
+                // Adjusted the gap between text and circles
+                e.Graphics.DrawString(Text, Font, textBrush, Height + 5, (Height - Font.Height) / 2);
+            }
+        }
+
+        // Override for handling click events
+        protected override void OnClick(EventArgs e)
+        {
+            base.OnClick(e);
+            // Toggle the checked state on click
+            Checked = !Checked;
+        }
+
+        // Uncheck other radio buttons in the same container
+        private void UncheckOtherRadioButtons()
+        {
+            // Get the parent container
+            Control container = Parent;
+
+            // Check if the container is not null and is a Form or Panel, adjust as needed
+            while (container != null && !(container is Form || container is Panel))
+            {
+                container = container.Parent;
+            }
+
+            // If a valid container is found, uncheck other radio buttons
+            if (container != null)
+            {
+                foreach (var control in container.Controls.OfType<CrEaTiiOn_RadioButton>())
+                {
+                    if (control != this)
+                    {
+                        control.Checked = false;
+                    }
+                }
+            }
         }
     }
-
-    #endregion
 }

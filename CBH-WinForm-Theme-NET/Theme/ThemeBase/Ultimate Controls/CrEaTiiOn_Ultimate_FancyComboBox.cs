@@ -1,9 +1,10 @@
-﻿using System;
+﻿#region Imports
+using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+#endregion
 
 namespace CBH.Ultimate.Controls
 {
@@ -33,65 +34,16 @@ namespace CBH.Ultimate.Controls
         public Color BorderColor { get => _borderColor; set { _borderColor = value; base.BackColor = _borderColor; } }
         [Category("CrEaTiiOn")]
         public int BorderSize { get => _borderSize; set { _borderSize = value; Padding = new Padding(_borderSize); AdjustComboBoxDimensions(); } }
-        [Category("CrEaTiiOn")]
-        public override Color ForeColor { get => base.ForeColor; set { base.ForeColor = value; _labelString.ForeColor = value; } }
-        [Category("CrEaTiiOn")]
-        public override Font Font { get => base.Font; set { base.Font = value; _labelString.Font = value; _comboList.Font = value; } }
-        [Category("CrEaTiiOn")]
-        public string String { get => _labelString.Text; set => _labelString.Text = value; }
-        [Category("CrEaTiiOn")]
-        public ComboBoxStyle DropDownStyle { get => _comboList.DropDownStyle; set { if (_comboList.DropDownStyle != ComboBoxStyle.Simple) _comboList.DropDownStyle = value; } }
-
-        [Category("CrEaTiiOn")]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
-        [Localizable(true)]
-        [MergableProperty(false)]
-        public ComboBox.ObjectCollection Items => _comboList.Items;
-
-        [Category("CrEaTiiOn")]
-        [AttributeProvider(typeof(IListSource))]
-        [DefaultValue(null)]
-        public object DataSource { get => _comboList.DataSource; set => _comboList.DataSource = value; }
-        [Category("CrEaTiiOn")]
-        [Browsable(true)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-        [Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
-        [EditorBrowsable(EditorBrowsableState.Always)]
-        [Localizable(true)]
-        public AutoCompleteStringCollection AutoCompleteCustomSource { get => _comboList.AutoCompleteCustomSource; set => _comboList.AutoCompleteCustomSource = value; }
-        [Category("CrEaTiiOn")]
-        [Browsable(true)]
-        [DefaultValue(AutoCompleteSource.None)]
-        [EditorBrowsable(EditorBrowsableState.Always)]
-        public AutoCompleteSource AutoCompleteSource { get => _comboList.AutoCompleteSource; set => _comboList.AutoCompleteSource = value; }
-        [Category("CrEaTiiOn")]
-        [Browsable(true)]
-        [DefaultValue(AutoCompleteMode.None)]
-        [EditorBrowsable(EditorBrowsableState.Always)]
-        public AutoCompleteMode AutoCompleteMode { get => _comboList.AutoCompleteMode; set => _comboList.AutoCompleteMode = value; }
-        [Category("CrEaTiiOn")]
-        [Bindable(true)]
-        [Browsable(false)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public object SelectedItem { get => _comboList.SelectedItem; set => _comboList.SelectedItem = value; }
-        [Category("CrEaTiiOn")]
-        [Browsable(false)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public int SelectedIndex { get => _comboList.SelectedIndex; set => _comboList.SelectedIndex = value; }
-        [Category("CrEaTiiOn")]
-        [DefaultValue("")]
-        [Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
-        [TypeConverter("System.Windows.Forms.Design.DataMemberFieldConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-        public string DisplayMember { get => _comboList.DisplayMember; set => _comboList.DisplayMember = value; }
-        [Category("CrEaTiiOn")]
-        [DefaultValue("")]
-        [Editor("System.Windows.Forms.Design.DataMemberFieldEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(UITypeEditor))]
-        public string ValueMember { get => _comboList.ValueMember; set => _comboList.ValueMember = value; }
 
         public event EventHandler OnSelectedIndexChanged;
 
         public CrEaTiiOn_Ultimate_FancyComboBox()
+        {
+            InitializeComponents();
+            AdjustComboBoxDimensions();
+        }
+
+        private void InitializeComponents()
         {
             _comboList = new ComboBox();
             _labelString = new Label();
@@ -99,7 +51,7 @@ namespace CBH.Ultimate.Controls
             SuspendLayout();
 
             _comboList.BackColor = ListBackColor;
-            _comboList.Font = new Font(Font.Name, 10f);
+            _comboList.Font = Font;
             _comboList.ForeColor = ListForeColor;
             _comboList.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
             _comboList.TextChanged += ComboBox_StringChanged;
@@ -118,7 +70,7 @@ namespace CBH.Ultimate.Controls
             _labelString.BackColor = BackColor;
             _labelString.TextAlign = ContentAlignment.MiddleLeft;
             _labelString.Padding = new Padding(8, 0, 0, 0);
-            _labelString.Font = new Font(Font.Name, 10f);
+            _labelString.Font = Font;
             _labelString.Click += Surface_Click;
             _labelString.MouseEnter += Surface_MouseEnter;
             _labelString.MouseLeave += Surface_MouseLeave;
@@ -132,7 +84,6 @@ namespace CBH.Ultimate.Controls
             Padding = new Padding(BorderSize);
             base.BackColor = BorderColor;
             ResumeLayout();
-            AdjustComboBoxDimensions();
         }
 
         private void Surface_MouseLeave(object sender, EventArgs e)
@@ -189,8 +140,7 @@ namespace CBH.Ultimate.Controls
 
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (OnSelectedIndexChanged != null)
-                OnSelectedIndexChanged.Invoke(sender, e);
+            OnSelectedIndexChanged?.Invoke(sender, e);
             _labelString.Text = _comboList.Text;
         }
 

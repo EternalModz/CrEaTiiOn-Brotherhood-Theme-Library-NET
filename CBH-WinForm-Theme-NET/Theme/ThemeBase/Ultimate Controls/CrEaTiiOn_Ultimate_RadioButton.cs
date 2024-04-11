@@ -1,8 +1,10 @@
-﻿using System;
+﻿#region Imports
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+#endregion
 
 namespace CBH.Ultimate.Controls
 {
@@ -26,8 +28,11 @@ namespace CBH.Ultimate.Controls
 
         protected override void OnPaint(PaintEventArgs pevent)
         {
+            base.OnPaint(pevent);
+
             var graphics = pevent.Graphics;
             graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
             var rbBorderSize = 18f;
             var rbCheckSize = 12f;
             var rectRbBorder = new RectangleF()
@@ -45,22 +50,21 @@ namespace CBH.Ultimate.Controls
                 Height = rbCheckSize
             };
 
-            using (var penBorder = new Pen(_checkedColor, 1.6f))
+            using (var penBorder = new Pen(Checked ? _checkedColor : _unCheckedColor, 1.6f))
             using (var brushRbCheck = new SolidBrush(_checkedColor))
             using (var brushBgCheck = new SolidBrush(_backgroundColor))
             using (var brushText = new SolidBrush(ForeColor))
             {
                 graphics.Clear(_backgroundColor);
+
+                // Draw RadioButton border
+                graphics.DrawEllipse(penBorder, rectRbBorder);
+
+                // Draw RadioButton check if checked
                 if (Checked)
-                {
-                    graphics.DrawEllipse(penBorder, rectRbBorder);
                     graphics.FillEllipse(brushRbCheck, rectRbCheck);
-                }
-                else
-                {
-                    penBorder.Color = _unCheckedColor;
-                    graphics.DrawEllipse(penBorder, rectRbBorder);
-                }
+
+                // Draw RadioButton text
                 graphics.DrawString(Text, Font, brushText, rbBorderSize + 8, (Height - TextRenderer.MeasureText(Text, Font).Height) / 2f);
             }
         }
@@ -68,6 +72,7 @@ namespace CBH.Ultimate.Controls
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
+            // Dynamically adjust width based on text size
             Width = TextRenderer.MeasureText(Text, Font).Width + 30;
         }
     }

@@ -9,11 +9,9 @@ using System.Windows.Forms;
 
 namespace CBH_Ultimate_Theme_Library
 {
-
     [ToolboxItem(false)]
     public class ASCThemeContainer : ContainerControl
     {
-
         private int moveHeight = 38;
         private bool formCanMove = false;
         private int mouseX;
@@ -159,7 +157,5 @@ namespace CBH_Ultimate_Theme_Library
             base.OnMouseUp(e);
             formCanMove = false;
         }
-
     }
-
 }

@@ -1,8 +1,10 @@
-﻿using System;
+﻿#region Imports
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+#endregion
 
 namespace CBH.Ultimate.Controls
 {
@@ -19,21 +21,45 @@ namespace CBH.Ultimate.Controls
         {
             Size = new Size(100, 100);
             SizeMode = PictureBoxSizeMode.StretchImage;
-
+            SetStyle(ControlStyles.ResizeRedraw, true); // Enable redraw on resize
         }
 
         [Category("CrEaTiiOn")]
-        public int BorderSize { get => _borderSize; set { _borderSize = value; Invalidate(); } }
+        public int BorderSize
+        {
+            get => _borderSize;
+            set { _borderSize = value; Invalidate(); }
+        }
         [Category("CrEaTiiOn")]
-        public Color GradientColorPrimary { get => _gradientColorPrimary; set { _gradientColorPrimary = value; Invalidate(); } }
+        public Color GradientColorPrimary
+        {
+            get => _gradientColorPrimary;
+            set { _gradientColorPrimary = value; Invalidate(); }
+        }
         [Category("CrEaTiiOn")]
-        public Color GradientColorSecondary { get => _gradientColorSecondary; set { _gradientColorSecondary = value; Invalidate(); } }
+        public Color GradientColorSecondary
+        {
+            get => _gradientColorSecondary;
+            set { _gradientColorSecondary = value; Invalidate(); }
+        }
         [Category("CrEaTiiOn")]
-        public DashStyle BorderLineStyle { get => _borderLineStyle; set { _borderLineStyle = value; Invalidate(); } }
+        public DashStyle BorderLineStyle
+        {
+            get => _borderLineStyle;
+            set { _borderLineStyle = value; Invalidate(); }
+        }
         [Category("CrEaTiiOn")]
-        public DashCap BorderCapStyle { get => _borderCapStyle; set { _borderCapStyle = value; Invalidate(); } }
+        public DashCap BorderCapStyle
+        {
+            get => _borderCapStyle;
+            set { _borderCapStyle = value; Invalidate(); }
+        }
         [Category("CrEaTiiOn")]
-        public float GradientAngle { get => _gradientAngle; set { _gradientAngle = value; Invalidate(); } }
+        public float GradientAngle
+        {
+            get => _gradientAngle;
+            set { _gradientAngle = value; Invalidate(); }
+        }
 
         protected override void OnResize(EventArgs e)
         {
@@ -44,7 +70,11 @@ namespace CBH.Ultimate.Controls
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);
-            var graphics = pe.Graphics;
+            DrawPictureBox(pe.Graphics);
+        }
+
+        private void DrawPictureBox(Graphics graphics)
+        {
             var rectContourSmooth = Rectangle.Inflate(ClientRectangle, -1, -1);
             var rectBorder = Rectangle.Inflate(ClientRectangle, -_borderSize, -_borderSize);
             var smoothSize = _borderSize > 0 ? _borderSize * 3 : 1;

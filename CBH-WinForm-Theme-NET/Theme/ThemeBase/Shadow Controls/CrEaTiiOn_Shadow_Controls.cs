@@ -13,8 +13,9 @@ using System.Windows.Forms;
 
 namespace CBH.Shadow.Controls
 {
-    //These were developed by Hawk & LordVirus (TheOnlyLordVirus)
-    //EternalMoz has cleaned these controls up and has made a few small changes / fixes
+    //These were developed by Hawk & LordVirus (TheOnlyLordVirus).
+    //EternalMoz has cleaned these controls up and has made a few small changes / fixes.
+
     #region Controls
     class CrEaTiiOn_Shadow_Button : ThemeControl154
     {

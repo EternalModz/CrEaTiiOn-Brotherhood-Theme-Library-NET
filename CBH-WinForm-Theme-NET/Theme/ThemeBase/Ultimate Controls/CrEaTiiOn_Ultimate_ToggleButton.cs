@@ -1,7 +1,9 @@
-﻿using System.ComponentModel;
+﻿#region Imports
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+#endregion
 
 namespace CBH.Ultimate.Controls
 {
@@ -34,6 +36,7 @@ namespace CBH.Ultimate.Controls
         public CrEaTiiOn_Ultimate_ToggleButton()
         {
             MinimumSize = new Size(45, 22);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw, true);
         }
 
         private GraphicsPath GetFigurePath()
@@ -55,7 +58,6 @@ namespace CBH.Ultimate.Controls
         {
             var toggleSize = Height - 5;
             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            pevent.Graphics.Clear(BackColor);
 
             if (Checked)
             {

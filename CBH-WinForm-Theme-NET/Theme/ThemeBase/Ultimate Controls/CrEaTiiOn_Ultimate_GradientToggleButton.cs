@@ -1,13 +1,15 @@
-﻿using System.ComponentModel;
+﻿#region Imports
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+#endregion
 
 namespace CBH.Ultimate.Controls
 {
     public sealed class CrEaTiiOn_Ultimate_GradientToggleButton : CheckBox
     {
-
+        // Fields for gradient colors and toggle properties
         private Color _gradientColorPrimary = Color.FromArgb(250, 36, 38);
         private Color _gradientColorSecondary = Color.Black;
         private Color _onToggleColor = Color.Black;
@@ -15,6 +17,7 @@ namespace CBH.Ultimate.Controls
         private Color _offToggleColor = Color.White;
         private bool _solidStyle = true;
 
+        // Properties for customization
         [Category("CrEaTiiOn")]
         public Color GradientColorPrimary { get => _gradientColorPrimary; set { _gradientColorPrimary = value; Invalidate(); } }
         [Category("CrEaTiiOn")]
@@ -40,6 +43,7 @@ namespace CBH.Ultimate.Controls
             MinimumSize = new Size(45, 22);
         }
 
+        // Get the path for the toggle button figure
         private GraphicsPath GetFigurePath()
         {
             var arcSize = Height - 1;
@@ -55,12 +59,14 @@ namespace CBH.Ultimate.Controls
             return path;
         }
 
+        // Custom painting logic
         protected override void OnPaint(PaintEventArgs pevent)
         {
             var toggleSize = Height - 5;
             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             pevent.Graphics.Clear(BackColor);
 
+            // Draw toggle button based on Checked state
             if (Checked)
             {
                 if (_solidStyle)
@@ -76,6 +82,7 @@ namespace CBH.Ultimate.Controls
                     pevent.Graphics.FillPath(new SolidBrush(_offBackColor), GetFigurePath());
                 else
                     pevent.Graphics.DrawPath(new Pen(_offBackColor), GetFigurePath());
+
                 pevent.Graphics.FillEllipse(new SolidBrush(_offToggleColor), new Rectangle(2, 2, toggleSize, toggleSize));
             }
         }

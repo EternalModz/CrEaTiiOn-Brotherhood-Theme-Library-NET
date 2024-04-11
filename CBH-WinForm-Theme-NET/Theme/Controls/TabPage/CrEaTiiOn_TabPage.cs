@@ -1,14 +1,9 @@
-﻿#region Imports
-
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-#endregion
-
 namespace CBH.Controls
 {
-    #region CrEaTiiOn_TabPage
-
     public class CrEaTiiOn_TabPage : TabControl
     {
         private Color _squareColor = Color.FromArgb(250, 36, 38);
@@ -45,63 +40,62 @@ namespace CBH.Controls
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            Bitmap bitmap = new Bitmap(Width, Height);
-            Graphics graphics = Graphics.FromImage(bitmap);
+            base.OnPaint(e);
 
-            try
+            // Only repaint if there are tabs
+            if (TabCount == 0)
+                return;
+
+            using (Bitmap bitmap = new Bitmap(Width, Height))
             {
-                SelectedTab.BackColor = Color.FromArgb(15, 15, 15);
-            }
-            catch { }
-
-            graphics.Clear(Color.FromArgb(20, 20, 20));
-
-            for (int i = 0; i < TabCount; i++)
-            {
-                Rectangle tabRect = GetTabRect(i);
-                Rectangle tabRectWithBorders = new Rectangle(new Point(tabRect.Location.X - 2, tabRect.Location.Y - 2), new Size(tabRect.Width + 3, tabRect.Height - 1));
-                Rectangle textRectangle = new Rectangle(tabRectWithBorders.Location.X + 20, tabRectWithBorders.Location.Y, tabRectWithBorders.Width - 20, tabRectWithBorders.Height);
-
-                if (i == SelectedIndex)
+                using (Graphics graphics = Graphics.FromImage(bitmap))
                 {
-                    graphics.FillRectangle(new SolidBrush(_squareColor), new Rectangle(tabRectWithBorders.Location, new Size(9, tabRectWithBorders.Height)));
+                    graphics.Clear(Color.FromArgb(20, 20, 20));
 
-                    if (ImageList != null && ImageList.Images[TabPages[i].ImageIndex] != null)
+                    for (int i = 0; i < TabCount; i++)
                     {
-                        graphics.DrawImage(ImageList.Images[TabPages[i].ImageIndex], new Point(textRectangle.Location.X + 8, textRectangle.Location.Y + 6));
+                        Rectangle tabRect = GetTabRect(i);
+                        Rectangle tabRectWithBorders = new Rectangle(new Point(tabRect.Location.X - 2, tabRect.Location.Y - 2), new Size(tabRect.Width + 3, tabRect.Height - 1));
+                        Rectangle textRectangle = new Rectangle(tabRectWithBorders.Location.X + 20, tabRectWithBorders.Location.Y, tabRectWithBorders.Width - 20, tabRectWithBorders.Height);
+
+                        if (i == SelectedIndex)
+                        {
+                            graphics.FillRectangle(new SolidBrush(_squareColor), new Rectangle(tabRectWithBorders.Location, new Size(9, tabRectWithBorders.Height)));
+
+                            if (ImageList != null && ImageList.Images[TabPages[i].ImageIndex] != null)
+                            {
+                                graphics.DrawImage(ImageList.Images[TabPages[i].ImageIndex], new Point(textRectangle.Location.X + 8, textRectangle.Location.Y + 6));
+                            }
+
+                            graphics.DrawString("      " + TabPages[i].Text, Font, Brushes.White, textRectangle, new StringFormat
+                            {
+                                LineAlignment = StringAlignment.Center,
+                                Alignment = StringAlignment.Near
+                            });
+                        }
+                        else
+                        {
+                            if (ImageList != null && ImageList.Images[TabPages[i].ImageIndex] != null)
+                            {
+                                graphics.DrawImage(ImageList.Images[TabPages[i].ImageIndex], new Point(textRectangle.Location.X + 8, textRectangle.Location.Y + 6));
+                            }
+
+                            graphics.DrawString(TabPages[i].Text, Font, Brushes.White, textRectangle, new StringFormat
+                            {
+                                LineAlignment = StringAlignment.Center,
+                                Alignment = StringAlignment.Near
+                            });
+                        }
+
+                        if (_showOuterBorders)
+                        {
+                            graphics.DrawRectangle(Pens.White, tabRectWithBorders);
+                        }
                     }
-
-                    graphics.DrawString("      " + TabPages[i].Text, Font, Brushes.White, textRectangle, new StringFormat
-                    {
-                        LineAlignment = StringAlignment.Center,
-                        Alignment = StringAlignment.Near
-                    });
-                }
-                else
-                {
-                    if (ImageList != null && ImageList.Images[TabPages[i].ImageIndex] != null)
-                    {
-                        graphics.DrawImage(ImageList.Images[TabPages[i].ImageIndex], new Point(textRectangle.Location.X + 8, textRectangle.Location.Y + 6));
-                    }
-
-                    graphics.DrawString(TabPages[i].Text, Font, Brushes.White, textRectangle, new StringFormat
-                    {
-                        LineAlignment = StringAlignment.Center,
-                        Alignment = StringAlignment.Near
-                    });
                 }
 
-                if (_showOuterBorders)
-                {
-                    graphics.DrawRectangle(Pens.White, tabRectWithBorders);
-                }
+                e.Graphics.DrawImage(bitmap, 0, 0);
             }
-
-            e.Graphics.DrawImage(bitmap, 0, 0);
-            graphics.Dispose();
-            bitmap.Dispose();
         }
     }
-
-    #endregion
 }

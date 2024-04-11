@@ -1,8 +1,10 @@
-﻿using System;
+﻿#region Imports
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+#endregion
 
 namespace CBH.Ultimate.Controls
 {
@@ -24,11 +26,9 @@ namespace CBH.Ultimate.Controls
         public CrEaTiiOn_Ultimate_GradientTextBox()
         {
             InitializeComponent();
-
         }
 
         public event EventHandler TextHasChanged;
-
 
         [Category("CrEaTiiOn")]
         public Color GradientColorPrimary { get => _gradientColorPrimary; set { _gradientColorPrimary = value; Invalidate(); } }
@@ -43,7 +43,7 @@ namespace CBH.Ultimate.Controls
         [Category("CrEaTiiOn")]
         public bool Multiline { get => textBox1.Multiline; set => textBox1.Multiline = value; }
         [Category("CrEaTiiOn")]
-        public string String { get { if (_isPlaceholder) return string.Empty; return textBox1.Text; } set { textBox1.Text = value; SetPlaceHolder(); } }
+        public string TextContent { get { if (_isPlaceholder) return string.Empty; return textBox1.Text; } set { textBox1.Text = value; SetPlaceholder(); } }
         [Category("CrEaTiiOn")]
         public override Color BackColor { get => base.BackColor; set { base.BackColor = value; textBox1.BackColor = value; } }
         [Category("CrEaTiiOn")]
@@ -57,81 +57,27 @@ namespace CBH.Ultimate.Controls
         [Category("CrEaTiiOn")]
         public Color PlaceholderColor { get => _placeholderColor; set { _placeholderColor = value; if (_isPlaceholder) textBox1.ForeColor = value; } }
         [Category("CrEaTiiOn")]
-        public string PlaceholderText { get => _placeholderText; set { _placeholderText = value; textBox1.Text = String.Empty; SetPlaceHolder(); } }
+        public string PlaceholderText { get => _placeholderText; set { _placeholderText = value; textBox1.Text = String.Empty; SetPlaceholder(); } }
 
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
             Graphics graphics = e.Graphics;
 
-            if (_borderRadius > 1)
+            using (GraphicsPath path = GetFigurePath(ClientRectangle, _borderRadius))
+            using (Pen penBorder = new Pen(new LinearGradientBrush(new PointF(0, Height / 2f), new PointF(Width, Height / 2f), _gradientColorPrimary, _gradientColorSecondary), _borderSize))
             {
-                var rectBorderSmooth = ClientRectangle;
-                var rectBorder = Rectangle.Inflate(rectBorderSmooth, -_borderSize, -_borderSize);
-                int smoothSize = _borderSize > 0 ? _borderSize : 1;
+                Region = new Region(path);
+                penBorder.Alignment = PenAlignment.Center;
 
-                using (GraphicsPath pathBorderSmooth = GetFigurePath(rectBorderSmooth, _borderRadius))
-                using (GraphicsPath pathBorder = GetFigurePath(rectBorder, _borderRadius - _borderSize))
-                using (Pen penBorderSmooth = new Pen(Parent.BackColor, smoothSize))
-                using (Pen penBorder = new Pen(new LinearGradientBrush(new PointF(0, Height / 2f), new PointF(Width, Height / 2f), _gradientColorPrimary, _gradientColorSecondary), _borderSize))
-                {
-                    Region = new Region(pathBorderSmooth);
-                    if (_borderSize > 15) SetTextBoxRoundedRegion();
-                    graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                    penBorder.Alignment = PenAlignment.Center;
+                if (_isFocused)
+                    penBorder.Color = _borderFocusColor;
 
-                    if (_isFocused)
-                        penBorder.Color = _borderFocusColor;
-
-                    if (_underlinedStyle)
-                    {
-                        graphics.DrawPath(penBorderSmooth, pathBorderSmooth);
-                        graphics.SmoothingMode = SmoothingMode.None;
-                        graphics.DrawLine(penBorder, 0, Height - 1, Width, Height - 1);
-                    }
-                    else
-                    {
-                        graphics.DrawPath(penBorderSmooth, pathBorderSmooth);
-                        graphics.DrawPath(penBorder, pathBorder);
-                    }
-                }
+                if (_underlinedStyle)
+                    graphics.DrawLine(penBorder, 0, Height - 1, Width, Height - 1);
+                else
+                    graphics.DrawPath(penBorder, path);
             }
-            else
-            {
-                using (Pen penBorder = new Pen(new LinearGradientBrush(new PointF(0, Height / 2f), new PointF(Width, Height / 2f), _gradientColorPrimary, _gradientColorSecondary), _borderSize))
-                {
-                    Region = new Region(ClientRectangle);
-                    penBorder.Alignment = PenAlignment.Inset;
-
-                    if (_isFocused)
-                        penBorder.Color = _borderFocusColor;
-
-                    if (_underlinedStyle)
-                        graphics.DrawLine(penBorder, 0, Height - 1, Width, Height - 1);
-                    else
-                        graphics.DrawRectangle(penBorder, 0, 0, Width - 0.5f, Height - 0.5f);
-                }
-            }
-        }
-
-        private void SetTextBoxRoundedRegion()
-        {
-            GraphicsPath pathText;
-
-            pathText = GetFigurePath(textBox1.ClientRectangle, Multiline ? _borderRadius - _borderSize : _borderRadius * 2);
-            textBox1.Region = new Region(pathText);
-        }
-
-        private GraphicsPath GetFigurePath(RectangleF rect, float radius)
-        {
-            var path = new GraphicsPath();
-            path.StartFigure();
-            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
-            path.AddArc(rect.Width - radius, rect.Y, radius, radius, 270, 90);
-            path.AddArc(rect.Width - radius, rect.Height - radius, radius, radius, 0, 90);
-            path.AddArc(rect.X, rect.Height - radius, radius, radius, 90, 90);
-            path.CloseFigure();
-            return path;
         }
 
         protected override void OnResize(EventArgs e)
@@ -159,7 +105,7 @@ namespace CBH.Ultimate.Controls
             }
         }
 
-        private void SetPlaceHolder()
+        private void SetPlaceholder()
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text) && _placeholderText != String.Empty)
             {
@@ -168,11 +114,10 @@ namespace CBH.Ultimate.Controls
                 textBox1.ForeColor = _placeholderColor;
                 if (_isPasswordChar)
                     textBox1.UseSystemPasswordChar = false;
-
             }
         }
 
-        private void RemovePlaceHolder()
+        private void RemovePlaceholder()
         {
             if (_isPlaceholder && _placeholderText != String.Empty)
             {
@@ -181,7 +126,6 @@ namespace CBH.Ultimate.Controls
                 textBox1.ForeColor = ForeColor;
                 if (_isPasswordChar)
                     textBox1.UseSystemPasswordChar = true;
-
             }
         }
 
@@ -214,14 +158,26 @@ namespace CBH.Ultimate.Controls
         {
             _isFocused = true;
             Invalidate();
-            RemovePlaceHolder();
+            RemovePlaceholder();
         }
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
             _isFocused = false;
             Invalidate();
-            SetPlaceHolder();
+            SetPlaceholder();
+        }
+
+        private GraphicsPath GetFigurePath(RectangleF rect, float radius)
+        {
+            var path = new GraphicsPath();
+            path.StartFigure();
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.Width - radius, rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+            return path;
         }
     }
 }

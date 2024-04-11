@@ -1,7 +1,9 @@
-﻿using System.ComponentModel;
+﻿#region Imports
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+#endregion
 
 namespace CBH.Ultimate.Controls
 {
@@ -45,20 +47,33 @@ namespace CBH.Ultimate.Controls
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            GroupBoxRenderer.DrawParentBackground(e.Graphics, ClientRectangle, this);
-            var rect = ClientRectangle;
+
+            // Draw control background
             using (var path = GetFigurePath(ClientRectangle, Radius))
             {
                 e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-                rect = new Rectangle(0, 0, rect.Width, _titleFont.Height + Padding.Bottom + Padding.Top);
-                if (_backgroundColor != Color.Transparent) using (var brush = new SolidBrush(_backgroundColor)) e.Graphics.FillPath(brush, path);
-                var clip = e.Graphics.ClipBounds;
-                e.Graphics.SetClip(rect);
-                using (var brush = new SolidBrush(_titleBackColor)) e.Graphics.FillPath(brush, path);
-                //using (var pen = new Pen(_titleBackColor, 1)) e.Graphics.DrawPath(pen, path);
-                TextRenderer.DrawText(e.Graphics, Text, _titleFont, rect, _titleForeColor);
-                e.Graphics.SetClip(clip);
-                // using (var pen = new Pen(_titleBackColor, 1)) e.Graphics.DrawPath(pen, path);
+
+                // Fill background
+                if (_backgroundColor != Color.Transparent)
+                {
+                    using (var brush = new SolidBrush(_backgroundColor))
+                    {
+                        e.Graphics.FillPath(brush, path);
+                    }
+                }
+
+                // Draw title background
+                var titleRect = new Rectangle(0, 0, ClientRectangle.Width, _titleFont.Height + Padding.Bottom + Padding.Top);
+                using (var titlePath = GetFigurePath(titleRect, Radius))
+                {
+                    using (var titleBrush = new SolidBrush(_titleBackColor))
+                    {
+                        e.Graphics.FillPath(titleBrush, titlePath);
+                    }
+                }
+
+                // Draw title text
+                TextRenderer.DrawText(e.Graphics, Text, _titleFont, titleRect, _titleForeColor);
             }
         }
     }

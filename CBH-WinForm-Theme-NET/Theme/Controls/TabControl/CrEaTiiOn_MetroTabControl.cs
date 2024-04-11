@@ -1,10 +1,8 @@
-﻿#region Imports
-using System;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-#endregion
 
 namespace CBH.Controls
 {
@@ -21,18 +19,26 @@ namespace CBH.Controls
             int nHeightEllipse // height of ellipse
         );
 
+        private Color accentColor = Color.FromArgb(250, 36, 38);
+
+        // Property to customize the accent color
+        public Color AccentColor
+        {
+            get { return accentColor; }
+            set
+            {
+                accentColor = value;
+                Invalidate(); // Redraw control when accent color changes
+            }
+        }
+
         public CrEaTiiOn_MetroTabControl()
         {
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.UserPaint | ControlStyles.DoubleBuffer, true);
             ItemSize = new Size(0, 34);
             Padding = new Point(24, 0);
             Font = new Font("Segoe UI", 12);
-        }
-
-        protected override void CreateHandle()
-        {
-            base.CreateHandle();
-            Alignment = TabAlignment.Top;
+            Alignment = TabAlignment.Top; // Moved setting Alignment to constructor for consistency
         }
 
         protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
@@ -44,34 +50,30 @@ namespace CBH.Controls
             G.SmoothingMode = SmoothingMode.HighQuality;
             G.Clear(Parent.BackColor);
 
-            Color FontColor = new Color();
-
-
-            for (int i = 0; i <= TabCount - 1; i++)
+            for (int i = 0; i < TabCount; i++) // Removed unnecessary -1 in the loop condition
             {
                 Rectangle mainRect = GetTabRect(i);
+                Color fontColor = Color.White; // Font color can be set directly
 
                 if (i == SelectedIndex)
                 {
-                    FontColor = Color.White;
-                    G.DrawLine(new Pen(Color.FromArgb(250, 36, 38)), new Point(mainRect.X - 2, mainRect.Height - 1), new Point(mainRect.X + mainRect.Width - 2, mainRect.Height - 1));
-                    G.DrawLine(new Pen(Color.FromArgb(250, 36, 38)), new Point(mainRect.X - 2, mainRect.Height), new Point(mainRect.X + mainRect.Width - 2, mainRect.Height));
+                    G.DrawLine(new Pen(AccentColor), new Point(mainRect.X - 2, mainRect.Height - 1), new Point(mainRect.X + mainRect.Width - 2, mainRect.Height - 1));
+                    G.DrawLine(new Pen(AccentColor), new Point(mainRect.X - 2, mainRect.Height), new Point(mainRect.X + mainRect.Width - 2, mainRect.Height));
                 }
                 else
                 {
-                    FontColor = Color.White;
-                    G.DrawLine(new Pen(Color.FromArgb(250, 36, 38)), new Point(mainRect.X - 2, mainRect.Height - 1), new Point(mainRect.X + mainRect.Width - 2, mainRect.Height - 1));
-                    G.DrawLine(new Pen(Color.FromArgb(250, 36, 38)), new Point(mainRect.X - 2, mainRect.Height), new Point(mainRect.X + mainRect.Width - 2, mainRect.Height));
+                    G.DrawLine(new Pen(AccentColor), new Point(mainRect.X - 2, mainRect.Height - 1), new Point(mainRect.X + mainRect.Width - 2, mainRect.Height - 1));
+                    G.DrawLine(new Pen(AccentColor), new Point(mainRect.X - 2, mainRect.Height), new Point(mainRect.X + mainRect.Width - 2, mainRect.Height));
                 }
 
                 if (i != 0)
                 {
-                    G.DrawLine(new Pen(Color.FromArgb(250, 36, 38)), new Point(mainRect.X - 4, mainRect.Height - 7), new Point(mainRect.X + 4, mainRect.Y + 6));
+                    G.DrawLine(new Pen(AccentColor), new Point(mainRect.X - 4, mainRect.Height - 7), new Point(mainRect.X + 4, mainRect.Y + 6));
                 }
 
                 int titleX = (mainRect.Location.X + mainRect.Width / 2) - Convert.ToInt32((G.MeasureString(TabPages[i].Text, Font).Width / 2));
                 int titleY = (mainRect.Location.Y + mainRect.Height / 2) - Convert.ToInt32((G.MeasureString(TabPages[i].Text, Font).Height / 2));
-                G.DrawString(TabPages[i].Text, Font, new SolidBrush(FontColor), new Point(titleX, titleY));
+                G.DrawString(TabPages[i].Text, Font, new SolidBrush(fontColor), new Point(titleX, titleY));
 
                 try
                 {
@@ -79,9 +81,11 @@ namespace CBH.Controls
                 }
                 catch
                 {
+                    // Handle exceptions
                 }
-
             }
+
+            // Set region for rounded corners
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
         }
     }

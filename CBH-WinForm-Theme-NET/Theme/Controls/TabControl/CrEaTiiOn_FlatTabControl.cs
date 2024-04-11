@@ -1,5 +1,4 @@
-﻿using CBH_Ultimate_Theme_Library.Theme.Helpers;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
@@ -9,9 +8,9 @@ namespace CBH.Controls
 {
     public class CrEaTiiOn_FlatTabControl : TabControl
     {
-        private int enterIndex;
-        private bool enterFlag = false;
+        private int hoverIndex = -1;
         private Color _themeColor = Color.FromArgb(250, 36, 38);
+
         public CrEaTiiOn_FlatTabControl()
         {
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer, true);
@@ -20,8 +19,7 @@ namespace CBH.Controls
             SizeMode = TabSizeMode.Fixed;
             ItemSize = new Size(120, 40);
             TabPageColor = Color.Transparent;
-            ThemeColor = Color.FromArgb(250, 36, 38);
-            TabPageForeColor = Color.White;
+            TabPageForeColor = Color.Black;
         }
 
         public Color ThemeColor
@@ -34,71 +32,34 @@ namespace CBH.Controls
             }
         }
 
-        private Color _tabPageColor = Color.White;
-        public Color TabPageColor
-        {
-            get { return _tabPageColor; }
-            set
-            {
-                _tabPageColor = value;
-                Invalidate();
-            }
-        }
+        public Color TabPageColor { get; set; } = Color.White;
 
-        private Color _tabPageForeColor = Color.Black;
-        public Color TabPageForeColor
-        {
-            get { return _tabPageForeColor; }
-            set
-            {
-                _tabPageForeColor = value;
-                Invalidate();
-            }
-        }
-
-        public override Rectangle DisplayRectangle
-        {
-            get
-            {
-                Rectangle rect = base.DisplayRectangle;
-                return new Rectangle(rect.Left - 4, rect.Top - 4, rect.Width + 8, rect.Height + 8);
-            }
-        }
-
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;
-                return cp;
-            }
-        }
+        public Color TabPageForeColor { get; set; } = Color.Black;
 
         protected override void OnMouseMove(MouseEventArgs e)
         {
             base.OnMouseMove(e);
-            enterFlag = true;
             for (int i = 0; i < TabCount; i++)
             {
-                var tempRect = GetTabRect(i);
-                if (tempRect.Contains(e.Location))
+                if (GetTabRect(i).Contains(e.Location))
                 {
-                    enterIndex = i;
+                    hoverIndex = i;
+                    Invalidate();
+                    break;
                 }
             }
-            Invalidate();
         }
 
         protected override void OnMouseLeave(EventArgs e)
         {
             base.OnMouseLeave(e);
-            enterFlag = false;
+            hoverIndex = -1;
             Invalidate();
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            base.OnPaint(e);
             var graphics = e.Graphics;
             graphics.SmoothingMode = SmoothingMode.HighQuality;
             graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
@@ -107,45 +68,30 @@ namespace CBH.Controls
 
             for (int i = 0; i < TabCount; i++)
             {
-                if (i == SelectedIndex)
+                Rectangle tabRect = GetTabRect(i);
+                if (i == SelectedIndex || i == hoverIndex)
                 {
-                    graphics.FillRectangle(new SolidBrush(_themeColor), GetTabRect(i).X + 3, ItemSize.Height - 3, ItemSize.Width - 6, 3);
-                    graphics.DrawString(TabPages[i].Text.ToUpper(), Font, new SolidBrush(_themeColor), GetTabRect(i), StringAlign.Center);
-                }
-                else
-                {
-                    if (i == enterIndex && enterFlag)
+                    using (SolidBrush brush = new SolidBrush(i == SelectedIndex ? _themeColor : Color.FromArgb(250, 36, 38)))
                     {
-                        graphics.FillRectangle(new SolidBrush(Color.FromArgb(250, 36, 38)), GetTabRect(i).X + 3, ItemSize.Height - 3, ItemSize.Width - 6, 3);
+                        graphics.FillRectangle(brush, tabRect.X + 3, tabRect.Bottom - 3, tabRect.Width - 6, 3);
                     }
-
-                    graphics.DrawString(TabPages[i].Text.ToUpper(), Font, new SolidBrush(Color.Black), GetTabRect(i), StringAlign.Center);
                 }
-            }
 
-            for (int i = 0; i < TabCount; i++)
-            {
-                if (i == SelectedIndex)
+                using (SolidBrush brush = new SolidBrush(TabPageColor))
                 {
-                    graphics.FillRectangle(new SolidBrush(_themeColor), GetTabRect(i).X + 3, ItemSize.Height - 3, ItemSize.Width - 6, 3);
-                    graphics.DrawString(TabPages[i].Text.ToUpper(), Font, new SolidBrush(_themeColor), GetTabRect(i), StringAlign.Center);
+                    Rectangle tabPageRect = tabRect;
+                    tabPageRect.Inflate(-3, -3);
+                    graphics.FillRectangle(brush, tabPageRect);
                 }
-                else
+
+                using (SolidBrush brush = new SolidBrush(TabPageForeColor))
                 {
-                    if (i == enterIndex && enterFlag)
+                    StringFormat stringFormat = new StringFormat
                     {
-                        graphics.FillRectangle(new SolidBrush(Color.FromArgb(250, 36, 38)), GetTabRect(i).X + 3, ItemSize.Height - 3, ItemSize.Width - 6, 3);
-                    }
-
-                    // Draw the TabPage background color
-                    Rectangle rect = GetTabRect(i);
-                    rect.Inflate(-3, -3);
-                    using (SolidBrush brush = new SolidBrush(_tabPageColor))
-                    {
-                        graphics.FillRectangle(brush, rect);
-                    }
-
-                    graphics.DrawString(TabPages[i].Text.ToUpper(), Font, new SolidBrush(_tabPageForeColor), GetTabRect(i), StringAlign.Center);
+                        Alignment = StringAlignment.Center,
+                        LineAlignment = StringAlignment.Center
+                    };
+                    graphics.DrawString(TabPages[i].Text.ToUpper(), Font, brush, tabRect, stringFormat);
                 }
             }
         }
