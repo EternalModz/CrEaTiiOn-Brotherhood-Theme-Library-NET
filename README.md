@@ -117,6 +117,10 @@ This theme is made up of many other themes out there. Some components have been 
 - NetDimension, WinForms-ModernUI
 - AshishKilmist, MetroFramework
 
+# Forms
+- Aldaviva, DarkNet
+- MicaForEveryone
+
 # Color Picker Controls
 - HappyGromper, ColorPickerLibrary
 
