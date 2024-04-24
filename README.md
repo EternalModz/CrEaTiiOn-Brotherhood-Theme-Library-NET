@@ -1,8 +1,8 @@
-# CrEaTiiOn-Brotherhood-Official-C-Theme
-This is the official Windows Forms theme for CrEaTiiOn Brotherhood &amp; the Crimson Modding Community.
+# CrEaTiiOn-Brotherhood-Official-Theme-NET
+This is the official Windows Forms theme for CrEaTiiOn Brotherhood &amp; the Zephyr League.
 
 # What does the theme include?
-The theme includes many controls to make modern and fabulous looking GUIs. Each component has been checked and tested for optimal performance. The theme includes over 50+ controls. Each one has been fine-tuned to match the color flow of CrEaTiiOn Brotherhood and the Crimson Modding Community. Different types of controls are sorted by name and have been categorized by visual appearance.
+The theme includes many controls to make modern and fabulous-looking GUIs. Each component has been checked and tested for optimal performance. The theme includes over 50+ controls. Each one has been fine-tuned to match the color flow of CrEaTiiOn Brotherhood and the Zephyr League. Different types of controls are sorted by name and have been categorized by visual appearance.
 
 # Coloring system
 - Our default accent color is red, ```RGB: 250, 36, 38```
