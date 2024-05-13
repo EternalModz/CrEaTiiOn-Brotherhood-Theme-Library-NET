@@ -147,7 +147,47 @@ namespace CBH_WinForm_Theme_Library_NET
             }
         }
         #endregion
+
+        static void Main()
+        {
+
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // CrEaTiiOn_Form
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "CrEaTiiOn_Form";
+            this.Load += new System.EventHandler(this.CrEaTiiOn_Form_Load);
+            this.ResumeLayout(false);
+
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
+
+        }
+
+        private void CrEaTiiOn_Form_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+(
+        int nLeftRect, // x-coordinate of upper-left corner
+        int nTopRect, // y-coordinate of upper-left corner
+        int nRightRect, // x-coordinate of lower-right corner
+        int nBottomRect, // y-coordinate of lower-right corner
+        int nWidthEllipse, // width of ellipse
+        int nHeightEllipse // height of ellipse
+);
     }
+
+
 
     internal static class DarkTitle
     {
@@ -163,3 +203,4 @@ namespace CBH_WinForm_Theme_Library_NET
         }
     }
 }
+

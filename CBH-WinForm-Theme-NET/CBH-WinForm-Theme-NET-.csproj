@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C3D7B16C-C047-4BAA-884F-7A2308619C33}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>CBH_WinForm_Theme_Library_NET</RootNamespace>
     <AssemblyName>CBH-WinForm-Theme-Library</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -285,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Theme\Controls\TextBox\CrEaTiiOn_ModernTextBox.resx">
       <DependentUpon>CrEaTiiOn_ModernTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Theme\Form\CrEaTiiOn_Form.resx">
+      <DependentUpon>CrEaTiiOn_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Theme\ThemeBase\Ultimate Controls\CrEaTiiOn_Ultimate_FancyComboBox.resx">
       <DependentUpon>CrEaTiiOn_Ultimate_FancyComboBox.cs</DependentUpon>
