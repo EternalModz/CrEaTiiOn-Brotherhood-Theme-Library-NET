@@ -1,19 +1,19 @@
-# CrEaTiiOn-Brotherhood-Official-Theme-NET
-This is the official Windows Forms theme for CrEaTiiOn Brotherhood &amp; the Zephyr League.
+# CrEaTiiOn-Brotherhood-Theme-Library-NET
+This is the official Windows Forms theme for CrEaTiiOn Brotherhood &amp; the Crimson Modding Team.
 
 # What does the theme include?
-The theme includes many controls to make modern and fabulous-looking GUIs. Each component has been checked and tested for optimal performance. The theme includes over 50+ controls. Each one has been fine-tuned to match the color flow of CrEaTiiOn Brotherhood and the Zephyr League. Different types of controls are sorted by name and have been categorized by visual appearance.
+The theme includes many controls to make modern and fabulous-looking GUIs. Each component has been checked and tested for optimal performance. The theme includes over 50+ controls. Each one has been fine-tuned to match the color flow of CrEaTiiOn Brotherhood and the Crimson Modding Team. Different types of controls are sorted by name and have been categorized by visual appearance.
 
 # Coloring system
 - Our default accent color is red, ```RGB: 250, 36, 38```
-- For background colors, we use different shades of dark gray
-- Text coloring is usualy white or something close to white
+- For background colors, we use different shades of dark gray.
+- Text coloring is usually white or something close to it.
 
 # Updates and bugs
-The theme will be updated a lot in the future. Since it is in it’s early stages, there will be some inconsistencies and problems. Make sure to let me know if you have any questions or if you have any bugs to report. Also feel free to create a pull request if you'd like to help fix / improve the theme. There’s also a GitHub issues tab where you can request for bug fixes and give feedback.
+The theme will be updated frequently in the future. Since it is in its early stages, there will be some inconsistencies and problems. Make sure to let me know if you have any questions or if you have any bugs to report. Also, feel free to create a pull request if you'd like to help fix/improve the theme. There’s also a GitHub issues tab where you can request bug fixes and give feedback.
 
 # Supported .NET versions
-The theme supports C# 9+. Any version of .NET that supports C# 9+ will work with the theme. .NET Core and .NET Standard 6.0+ versions also work well with the theme. For .NET Framework, the CPROJ file must be edited in order for the theme to work. .NET Framework does not support C# 9+ by default. So the CPROJ file must be edited so that the solution supports higher versions of the language.
+The theme supports C# 9+. Any version of .NET that supports C# 9+ will work with the theme. .NET Core and .NET Standard 6.0+ versions also work well with the theme. For .NET Framework, the CPROJ file must be edited for the theme to work. The .NET Framework does not support C# 9+ by default. So the CPROJ file must be edited so that the solution supports higher versions of the language.
 
 Steps for updating the CPROJ file (for .NET Framework ONLY)
 
@@ -43,37 +43,26 @@ Keep in mind that C# 9 is the minimum version that is needed for the theme to wo
 # How to use the theme
 It’s quite simple to get the theme up and running. As long as the project supports C# 10 and above, it should work. 
 
-Step 1: Download the latest version of the theme.
+Step 1: Download the latest version of the theme. *This can be found in the "Releases" section.
 
-Step 2: Unpack the ZIP file and extract it to the desktop or to any location where it can be found easily.
+Step 2: Unpack the .zip or .7z file and extract it to the desktop or to any location where it can be found easily.
 
 Step 3: Open the extracted folder and locate the folder with the name “Theme.”
 
-Step 4: Copy that folder or drag and drop it inside of the visual studio project. NOTE: It must be inserted into the project folder using Visual Studio itself. Dropping the folder without using Visual Studio may break the project or cause the theme to not work.
+Step 4: Copy that folder or drag and drop it inside of the Visual Studio project. *It must be inserted into the project folder using Visual Studio itself. Dropping the folder without using Visual Studio may break the project or cause the theme to not work.*
 
-Step 5: Build and rebuild the project in Visual Studio.
+Step 5: Build/rebuild the project in Visual Studio.
 
 Step 6: Open or create a new WinForm and navigate to the toolbox, the new controls should automatically show up towards the top. 
 
 That’s it, you're done! Enjoy using the theme :)
 
-# How to round the corners
-Add in the following code to round corners of any controls or WinForms
+# How to use the new CrEaTiiOn_Form
+The theme now has a custom form control. Simply change the form mode under the namespace to switch to the CrEaTiiOn one. This new form includes features such as Dark Mode support for WinForms.
 
-```C#
-[DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-private static extern IntPtr CreateRoundRectRgn
-(
-        int nLeftRect, // x-coordinate of upper-left corner
-        int nTopRect, // y-coordinate of upper-left corner
-        int nRightRect, // x-coordinate of lower-right corner
-        int nBottomRect, // y-coordinate of lower-right corner
-        int nWidthEllipse, // width of ellipse
-        int nHeightEllipse // height of ellipse
-);
-
-this.FormBorderStyle = FormBorderStyle.None;
-Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+It should look something like this:
+```cs
+public partial class mainForm : CrEaTiiOn_Form
 ```
 
 # Supported Visual Studio Versions
@@ -129,4 +118,4 @@ This theme is made up of many other themes out there. Some components have been 
 - Miku-666
 - May/MattNL (MNL)
 
-Thanks to everyone that helped and supported me during the development stages of this project!
+Thanks to everyone who helped and supported me during the development stages of this project!
